@@ -15,6 +15,7 @@
 /*menu*/
 
 .menu {
+   display: flex;
    position: absolute;
    top: 20px;
    left: 50%;
@@ -23,6 +24,7 @@
    background: #ffebeb;
    border-radius: 40px;
    z-index: 10;
+   justify-content: space-around;
 }
 
 .content {
@@ -43,6 +45,7 @@
     justify-content: space-around;
     padding: 5px;
     margin-top: 0;
+    gap: 7px;
 }
 
 /*Texto*/
@@ -56,22 +59,42 @@
 
 .imgText h2{
  font-family:Arial, Helvetica, sans-serif;
- font-size: 15px;
+ font-size: 20px;
  text-align: justify;
  position: relative;
+ color: #ffebeb;
 }
 
 /*Todo lo que esta arriba de la imagen*/
 .imgContent {
     height: 75vh;
     background-image: url("../img/Leon.jpg");
-    background-position: center 10px;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 90% auto;
+    background-size: cover;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.txtFrase{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #a41508;
+    padding: 0.5% 3%;
+    width: 25%;
+    margin-top: 1%;
+    margin-left: 40%;
+    margin-bottom: 2%;
+    border-radius: 50px;
 }
 
 /*Botones*/
@@ -122,9 +145,28 @@
     border: none;
 }
 
+.btnSalir{
+    position: absolute;
+    top: 20px;
+    left: calc(10% - 60px);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.btnSalir img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /*Botones y texto de abajo a la derecha*/
 .PrincipalContent{
-height: 100%;
+   height: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -138,14 +180,14 @@ margin-top: 5%;
     color: white;
     justify-content: center;
     position: absolute;
-    left: 40px;
-    bottom: 15%;
+    left: 35px;
+    bottom: 5%;
     background-color: #a41508;
     padding: 20px;
     border-radius: 40px;
-    width: 250px;
+    width: 290px;
     text-align: center;
-    border: 10px solid #ffebeb;
+    border: 12px solid #ffebeb;
 }
 
 html, body {
