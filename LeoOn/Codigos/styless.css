@@ -21,32 +21,22 @@ html {
 
 .menu {
     display: flex;
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    background: #ffebeb;
-    border-radius: 40px;
-    z-index: 10;
-    justify-content: space-around;
-}
-
-.content {
-    display: flex;
+    flex: 1;
     justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 35px;
-    border-radius: 10px;
+    font-size: 100%;
+    color: #ffebeb;
+    padding-bottom: 10px;
 }
 
 .menuContainer {
     display: flex;
-    justify-content: space-around;
-    padding: 5px;
-    margin-top: 0;
-    gap: 7px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    background-color: #ffebeb;
+    padding: 5px 15px;
+    border-radius: 40px;
+    gap: 8px;
 }
 
 /*Texto*/
@@ -67,19 +57,29 @@ html {
 }
 
 /*Todo lo que esta arriba de la imagen*/
+
 .imgContent {
-    height: 75vh;
+    min-height: 70vh;
+    height: auto;
+    margin: 1% 3%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgContent >* {
+    position: relative;
+    z-index: 1;
+}
+
+.imgContent::before {
+    content: "";
     background-image: url("../img/Leon.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-end;
-    margin: 1% 3%;
-    border-radius: 20px;
-    overflow: hidden;
+    position: absolute;
+    inset: 0;
 }
 
 .txtFrase {
@@ -91,36 +91,45 @@ html {
     padding: 0.5% 3%;
     width: 25%;
     margin-top: 1%;
-    margin-left: 40%;
+    margin-left: 50%;
     margin-bottom: 2%;
     border-radius: 50px;
 }
 
 /*Botones*/
-.btn {
-    display: inline-block;
-    padding: 10px 45px;
-    background-color: #a41508;
-    color: white;
+
+
+a:link{
     text-decoration: none;
-    justify-content: space-around;
+}
+.btnMenu {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #a41508;
     border-radius: 40px;
+    border-width: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
+    margin: auto;
+    text-align: center;
+    width: 80px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    color: #ffebeb;
 }
 
 .btnPrincipal {
     display: flex;
     justify-content: space-between;
-    padding: 5px;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     text-align: center;
     align-items: center;
     width: min(90%, 25rem);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .btnInSesion {
@@ -131,7 +140,6 @@ html {
     text-decoration: none;
     font-family: "Slow_Play";
     font-size: 0.95rem;
-    border: none;
 }
 
 .btnRegist {
@@ -142,26 +150,20 @@ html {
     text-decoration: none;
     font-family: "Slow_Play";
     font-size: 15px;
-    border: none;
 }
 
-.btnSalir {
-    position: absolute;
-    top: 20px;
-    left: calc(10% - 60px);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    z-index: 100;
+.TopMenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 90%;
+    margin: 20px auto 0;
 }
 
-.btnSalir img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.Logo img {
+    height: 35px;
+    display: block;
 }
 
 /*Botones y texto de abajo a la derecha*/
@@ -169,18 +171,16 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 10%;
+    padding-right: 5%;
     color: white;
     align-items: flex-end;
-    height: 100%;
-    margin-top: 2%;
 }
 
 .contObjetivo {
     color: white;
     justify-content: center;
     position: absolute;
-    left: 35px;
+    margin-left: 2%;
     bottom: 5%;
     background-color: #a41508;
     padding: 20px;
